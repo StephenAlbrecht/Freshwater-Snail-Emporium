@@ -10,19 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PetShop
 {
     /// <summary>
-    /// Interaction logic for AddUserDisplay.xaml
+    /// Interaction logic for SellerHome.xaml
     /// </summary>
-    public partial class AddUserDisplay : UserControl
+    public partial class SellerHome : Window
     {
-        public AddUserDisplay()
+        User Seller;
+        public SellerHome(ref User seller)
         {
             InitializeComponent();
+            Seller = seller;
+            WelcomeLabel.Content = $"Welcome back, {Seller.FirstName}!";
         }
     }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User Zip="0" Seller="false" />
+  <User FirstName="Ted" LastName="Danson" Username="tdan" Password="1" Email="tdan@cheers.com" Address="123 Cheers Blvd" City="Boston" State="MA" Zip="14124" PaymentMethod="Credit Card" Seller="true" />
+  <User FirstName="Shelley" LastName="Long" Username="slong" Password="1" Email="123@cheers.com" Address="123 Cheers Way" City="Boston" State="MA" Zip="12312" PaymentMethod="Credit Card" Seller="false" />
+</ArrayOfUser>

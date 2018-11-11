@@ -58,16 +58,11 @@
     <Compile Include="AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddUserDisplay.xaml.cs">
-      <DependentUpon>AddUserDisplay.xaml</DependentUpon>
+    <Compile Include="SellerHome.xaml.cs">
+      <DependentUpon>SellerHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddUserDisplayVM.cs" />
     <Compile Include="User.cs" />
     <Page Include="AddUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AddUserDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,16 +79,12 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="LoginDisplay.xaml">
+    <Page Include="SellerHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginDisplay.xaml.cs">
-      <DependentUpon>LoginDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginDisplayVM.cs" />
     <Compile Include="Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -38,3 +38,22 @@ C:\Users\steph\Dropbox\School\Software Systems Development\Freshwater-Snail-Empo
 C:\Users\steph\Dropbox\School\Software Systems Development\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
 C:\Users\steph\Dropbox\School\Software Systems Development\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
 C:\Users\steph\Dropbox\School\Software Systems Development\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\AddUser.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\Login.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\App.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.cache
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.lref
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\AddUser.baml
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\Login.baml
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.g.resources
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\SellerHome.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\SellerHome.baml

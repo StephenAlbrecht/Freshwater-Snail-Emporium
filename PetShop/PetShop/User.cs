@@ -46,7 +46,27 @@ namespace PetShop
 
         public User() {}
 
+        public User(string firstName, string lastName, string username, string password, 
+            string email, string address, string city, string state, int zip, 
+            string paymentMethod, bool seller)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Username = username;
+            Password = password;
+            Email = email;
+            Address = address;
+            City = city;
+            State = state;
+            Zip = zip;
+            PaymentMethod = paymentMethod;
+            Seller = seller;
+        }
 
-
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName} ({Username})";
+        }
     }
+
 }

@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetShop"
         mc:Ignorable="d"
-        Title="Login - Freshwater Snail Emporium" Height="250" Width="350">
-    
-        <local:LoginDisplay x:Name="MainLoginDisplay"/>
-    
+        Title="Login - Freshwater Snail Emporium" Height="250" Width="350" Background="White" BorderBrush="LightSeaGreen" BorderThickness="10">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Username:"/>
+        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Password:"/>
+        <TextBox Grid.Column="2" Grid.Row="1" Height="22" Width="170" TextChanged="TextBoxChanged" x:Name="UsernameEntry"/>
+        <PasswordBox Grid.Column="2" Grid.Row="2" Height="22" Width="170" PasswordChanged="PasswordBoxChanged" x:Name="PasswordEntry"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Height="22" Width="100" Margin="5" Content="Log In" Click="LogInClicked" IsDefault="True"/>
+            <Button Height="22" Width="100" Margin="5" Content="Create Account" Click="CreateAccountClicked"/>
+        </StackPanel>
+    </Grid>
 </Window>

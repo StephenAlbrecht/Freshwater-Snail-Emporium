@@ -5,6 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetShop"
         mc:Ignorable="d"
-        Title="Add New User - Freshwater Snail Emporium" Height="530" Width="700">
-    <local:AddUserDisplay/>
-</Window>
+        Title="Add New User - Freshwater Snail Emporium" Height="530" Width="700"
+        BorderBrush="LightSeaGreen" BorderThickness="10">
+    <Grid x:Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="First name:"/>
+        <Label Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Last name:"/>
+        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Username:"/>
+        <Label Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Password:"/>
+        <Label Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Confirm password:"/>
+        <Label Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Address:"/>
+        <Label Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="City:"/>
+        <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Email:"/>
+        <Label Grid.Column="1" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Payment Type:"/>
+        <Label Grid.Column="1" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Account type:"/>
+        <TextBox Grid.Column="2" Grid.Row="1" TextChanged="TextBoxChanged" Height="22" Width="150" x:Name="FirstNameEntry"/>
+        <TextBox Grid.Column="4" Grid.Row="1" TextChanged="TextBoxChanged" Height="22" Width="150" x:Name="LastNameEntry"/>
+        <TextBox Grid.Column="2" Grid.Row="2" TextChanged="TextBoxChanged" Height="22" Width="150" x:Name="UsernameEntry"/>
+        <PasswordBox Grid.Column="2" Grid.Row="3" PasswordChanged="PasswordBoxChanged" Height="22" Width="150" x:Name="PasswordEntry"/>
+        <PasswordBox Grid.Column="4" Grid.Row="3" PasswordChanged="PasswordBoxChanged" Height="22" Width="150" x:Name="ConfirmPasswordEntry"/>
+        <TextBox Grid.Column="2" Grid.Row="4" TextChanged="TextBoxChanged" Height="22" Width="453" x:Name="AddressEntry" Grid.ColumnSpan="3" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="2" Grid.Row="5" TextChanged="TextBoxChanged" Height="22" Width="150" x:Name="CityEntry"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="5">
+            <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="State:" Margin="10,0,0,0"/>
+            <ComboBox Height="22" Width="50" x:Name="StateSelector" PreviewMouseLeftButtonDown="StateSelectorClicked" SelectionChanged="StateSelectorChanged"/>
+            <Label x:Name="StateSelectorError" Content="*" Foreground="Red" Visibility="Hidden"/>
+            <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="Zip:" Margin="10,0,0,0"/>
+        </StackPanel>
+        <TextBox Grid.Column="4" Grid.Row="5" TextChanged="TextBoxChanged" Height="22" Width="75" x:Name="ZipEntry" HorizontalAlignment="Left" MaxLength="5"/>
+        <TextBox Grid.Column="2" Grid.Row="6" TextChanged="TextBoxChanged" Height="22" Width="453" x:Name="EmailEntry" Grid.ColumnSpan="3" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="2" Grid.Row="7" Height="22" Width="150" x:Name="PaymentSelector" PreviewMouseLeftButtonDown="PaymentClicked" SelectionChanged="PaymentChanged"/>
+        <Label Grid.Column="3" Grid.Row="7" x:Name="PaymentError" Content="*" Foreground="Red" Visibility="Hidden"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="4">
+            <Button Height="22" Width="100" Margin="10" Content="Create Account" Click="CreateAccountClicked" IsDefault="True"/>
+            <Button Height="22" Width="100" Margin="10" Content="Cancel" Click="CancelClicked" IsCancel="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2" x:Name="RadioButtonParent">
+            <RadioButton GroupName="AccountType" Margin="10" x:Name="ShopRB" Checked="RbChecked" Content="Shopper"/>
+            <RadioButton GroupName="AccountType" Margin="10" x:Name="SellRB" Checked="RbChecked" Content="Seller"/>
+        </StackPanel>
+    </Grid></Window>
