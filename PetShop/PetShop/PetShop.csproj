@@ -58,9 +58,17 @@
     <Compile Include="AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PetDisplay.xaml.cs">
+      <DependentUpon>PetDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PetDisplayVM.cs" />
     <Compile Include="SellerHome.xaml.cs">
       <DependentUpon>SellerHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShopperHome.xaml.cs">
+      <DependentUpon>ShopperHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShopperHomeVM.cs" />
     <Compile Include="User.cs" />
     <Page Include="AddUser.xaml">
       <SubType>Designer</SubType>
@@ -79,7 +87,15 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PetDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SellerHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShopperHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

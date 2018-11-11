@@ -29,6 +29,7 @@ namespace PetShop
         {
             InitializeComponent();
             ReadInUsers();
+            UsernameEntry.Focus();
         }
 
         private void ReadInUsers()
@@ -63,7 +64,9 @@ namespace PetShop
                 }
                 else
                 {
-
+                    ShopperHome shopperWindow = new ShopperHome(ref user);
+                    shopperWindow.Show();
+                    Close();
                 }
             }
         }
@@ -88,6 +91,7 @@ namespace PetShop
             {
                 valid = false;
                 MessageBox.Show("Invalid account credentials. Please try again.", "Login Error");
+                UsernameEntry.Focus();
             }
             return valid;
         }

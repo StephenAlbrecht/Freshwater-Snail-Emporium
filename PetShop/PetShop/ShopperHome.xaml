@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetShop"
         mc:Ignorable="d"
-        Title="Shop - Freshwater Snail Emporium" Height="450" Width="800">
+        Title="Shop - Freshwater Snail Emporium" Height="530" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -13,23 +13,33 @@
                 <MenuItem Header="Save As..."/>
                 <MenuItem Header="Exit"/>
             </MenuItem>
-            <MenuItem Header="Logged in as: "/>
-            <MenuItem Header="Cart: 0 items, $0.00"/>
+            <MenuItem Header="Logged in as: " x:Name="ShopperLabel"/>
+            <MenuItem Header="{Binding TotalCostDisplay}" x:Name="CartLabel"/>
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkGreen" FontWeight="Bold" FontSize="18" Content="Welcome to the Freshwater Snail Emporium!"/>
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="DarkGreen" FontWeight="Bold" FontSize="18" Content="Welcome to the Freshwater Snail Emporium!" x:Name="WelcomeLabel"/>
             
+            <local:PetDisplay Grid.Column="1" Grid.Row="2" x:Name="MainPetDisplay" Width="740"/>
+            
+            <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label Content="Quantity:" Height="25"/>
+                <TextBox x:Name="Quantity" Text="{Binding Quantity}" Height="22" Width ="25" Margin="5" TextChanged="TextBoxChanged"/>
+                <Button Margin="10" Height="22" Width="100" Content="Add to Cart" Command="{Binding AddToCartCommand}" Click="ValidateQty"/>
+                <Button Margin="10" Height="22" Width="100" Content="Review Order" Click="ReviewOrderCommand"/>
+                <Button Margin="10" Height="22" Width="100" Content="Place Order" Click="PlaceOrderCommand"/>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>

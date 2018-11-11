@@ -42,6 +42,7 @@ namespace PetShop
             Users = users;
             StateSelector.ItemsSource = States;
             PaymentSelector.ItemsSource = PaymentTypes;
+            FirstNameEntry.Focus();
         }
 
         private void CreateAccountClicked(object sender, RoutedEventArgs e)

@@ -19,6 +19,8 @@ namespace PetShop
         [XmlAttribute(DataType = "string")]
         public string ImagePath { get; set; }
 
+        public int purchasedAmt { get; set; }
+
         public Pet() {}
 
         public Pet(string name, int stock, double price, string imagePath)

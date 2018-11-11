@@ -19,9 +19,42 @@ namespace PetShop
     /// </summary>
     public partial class ShopperHome : Window
     {
-        public ShopperHome()
+        User Shopper;
+        ListView PetView;
+        public ShopperHome(ref User shopper)
         {
             InitializeComponent();
+            PetView = MainPetDisplay.Content as ListView;
+            ShopperHomeVM shopperWindow = new ShopperHomeVM(ref PetView);
+            DataContext = shopperWindow;
+            Shopper = shopper;
+            ShopperLabel.Header = $"Logged in as: {Shopper.Username}";
+            WelcomeLabel.Content = $"Welcome to the Freshwater Snail Emporium, {Shopper.FirstName}!";
+        }
+
+        private void ValidateQty(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Quantity.Text) || !ValidateNumerical(Quantity.Text))
+            {
+                Quantity.BorderBrush = Brushes.Red;
+                return;
+            }
+            Pet selectedPet = PetView.SelectedItem as Pet;
+            if (selectedPet.Stock <= 0)
+            {
+                MessageBox.Show($"{selectedPet.Name} is sold out. You may have added the last one to your cart.", "Out of Stock");
+            }
+        }
+
+        private bool ValidateNumerical(string tester)
+        {
+            return tester.Where(x => char.IsDigit(x)).Count() == tester.Length;
+        }
+
+        private void TextBoxChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            tb.BorderBrush = Brushes.DarkGray;
         }
     }
 }
