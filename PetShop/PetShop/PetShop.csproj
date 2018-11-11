@@ -55,7 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddUserDisplay.xaml.cs">
+      <DependentUpon>AddUserDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddUserDisplayVM.cs" />
     <Compile Include="User.cs" />
+    <Page Include="AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddUserDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

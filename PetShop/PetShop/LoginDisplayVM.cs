@@ -33,7 +33,11 @@ namespace PetShop
 
         private void CreateAccountClicked(object obj)
         {
-
+            if(Authenticated())
+            {
+                AddUser addUserWindow = new AddUser(ref Users);
+                addUserWindow.ShowDialog();
+            }
         }
 
         private void LogInClicked(object obj)
@@ -41,9 +45,9 @@ namespace PetShop
 
         }
 
-        private void Autheticated()
+        private bool Authenticated()
         {
-
+            return true;
         }
 
         public ICommand CreateAccountCommand
