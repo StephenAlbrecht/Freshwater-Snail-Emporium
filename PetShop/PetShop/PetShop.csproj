@@ -62,6 +62,13 @@
       <DependentUpon>PetDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="PetDisplayVM.cs" />
+    <Compile Include="PlaceOrder.xaml.cs">
+      <DependentUpon>PlaceOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewOrder.xaml.cs">
+      <DependentUpon>ReviewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewOrderVM.cs" />
     <Compile Include="SellerHome.xaml.cs">
       <DependentUpon>SellerHome.xaml</DependentUpon>
     </Compile>
@@ -88,6 +95,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PetDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlaceOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReviewOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

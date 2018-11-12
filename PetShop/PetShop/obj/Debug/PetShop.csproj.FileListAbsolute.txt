@@ -62,3 +62,7 @@ C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\De
 C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PetDisplay.baml
 C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\ShopperHome.baml
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\ReviewOrder.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\ReviewOrder.baml
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PlaceOrder.g.cs
+C:\Users\steph\Documents\GitHub\Freshwater-Snail-Emporium\PetShop\PetShop\obj\Debug\PlaceOrder.baml

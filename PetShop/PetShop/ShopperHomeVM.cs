@@ -5,14 +5,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PetShop
 {
-    class ShopperHomeVM : INotifyPropertyChanged
+    public class ShopperHomeVM : INotifyPropertyChanged
     {
-        ListView PetView { get; set; }
+        public ListView PetView { get; set; }
+        public User Shopper;
 
         private double _totalCost = 0;
         public double TotalCost
@@ -21,7 +23,19 @@ namespace PetShop
             set
             {
                 _totalCost = value;
+                TotalCostToString = "$" + string.Format("{0:N2}", _totalCost);
                 PropertyChanged(this, new PropertyChangedEventArgs("TotalCost"));
+            }
+        }
+
+        private string _totalCostToString = "$0.00";
+        public string TotalCostToString
+        {
+            get { return _totalCostToString; }
+            set
+            {
+                _totalCostToString = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("TotalCostToString"));
             }
         }
 
@@ -58,9 +72,10 @@ namespace PetShop
             }
         }
 
-        public ShopperHomeVM(ref ListView petView)
+        public ShopperHomeVM(ref ListView petView, ref User shopper)
         {
             PetView = petView;
+            Shopper = shopper;
         }
 
         private void AddToCartClicked(object obj)
@@ -74,22 +89,40 @@ namespace PetShop
             int purchasedAmount = int.Parse(Quantity);
             if (purchasedAmount > selectedPet.Stock)
                 purchasedAmount = selectedPet.Stock;
-
-            selectedPet.Stock -= purchasedAmount;
             
-            Pet tmp = CartContents.FirstOrDefault(p => p == selectedPet);
+            selectedPet.Stock -= purchasedAmount;
+            selectedPet.purchasedAmt += purchasedAmount;
+            Pet tmp = CartContents.FirstOrDefault(p => p.Name == selectedPet.Name);
             if (tmp == null)
             {
-                CartContents.Add(selectedPet);
+                Pet cartPet = new Pet(selectedPet.Name, selectedPet.Stock, selectedPet.Price, selectedPet.ImagePath);
+                cartPet.purchasedAmt = purchasedAmount;
+                cartPet.total = "$"+(cartPet.purchasedAmt * cartPet.Price).ToString();
+                CartContents.Add(cartPet);
             }
             else
             {
-                CartContents.FirstOrDefault(p => p == selectedPet).purchasedAmt += purchasedAmount;
+                tmp.purchasedAmt += purchasedAmount;
+                tmp.total = "$" + (tmp.purchasedAmt * tmp.Price).ToString();
             }
 
-
+            //MessageBox.Show($"{purchasedAmount} {selectedPet.Name} added to cart.", "Pet Added to Cart");
             TotalCost += selectedPet.Price * purchasedAmount;
             TotalCostDisplay = $"Cart: {CartContents.Count()} items, ${string.Format("{0:N2}", TotalCost)}";
+        }
+
+        private void ReviewCartClicked(object obj)
+        {
+            ReviewOrderVM reviewWindow = new ReviewOrderVM(this);
+            ReviewOrder cart = new ReviewOrder();
+            cart.DataContext = reviewWindow;
+            cart.Show();
+        }
+
+        private void PlaceOrderClicked(object obj)
+        {
+            PlaceOrder orderWindow = new PlaceOrder(this);
+            orderWindow.ShowDialog();
         }
 
         public ICommand AddToCartCommand
@@ -104,6 +137,32 @@ namespace PetShop
             }
         }
         DelegateCommand _addToCartEvent;
+
+        public ICommand ReviewOrderCommand
+        {
+            get
+            {
+                if (_reviewCartEvent == null)
+                {
+                    _reviewCartEvent = new DelegateCommand(ReviewCartClicked);
+                }
+                return _reviewCartEvent;
+            }
+        }
+        DelegateCommand _reviewCartEvent;
+
+        public ICommand PlaceOrderCommand
+        {
+            get
+            {
+                if (_placeOrderClicked == null)
+                {
+                    _placeOrderClicked = new DelegateCommand(PlaceOrderClicked);
+                }
+                return _placeOrderClicked;
+            }
+        }
+        DelegateCommand _placeOrderClicked;
 
         private bool ValidateNumerical(string tester)
         {

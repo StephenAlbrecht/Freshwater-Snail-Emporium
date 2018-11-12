@@ -25,7 +25,7 @@ namespace PetShop
         {
             InitializeComponent();
             PetView = MainPetDisplay.Content as ListView;
-            ShopperHomeVM shopperWindow = new ShopperHomeVM(ref PetView);
+            ShopperHomeVM shopperWindow = new ShopperHomeVM(ref PetView, ref shopper);
             DataContext = shopperWindow;
             Shopper = shopper;
             ShopperLabel.Header = $"Logged in as: {Shopper.Username}";
@@ -40,6 +40,9 @@ namespace PetShop
                 return;
             }
             Pet selectedPet = PetView.SelectedItem as Pet;
+            int purchasedAmount = int.Parse(Quantity.Text);
+            if (purchasedAmount > selectedPet.Stock)
+                Quantity.Text = selectedPet.Stock.ToString();
             if (selectedPet.Stock <= 0)
             {
                 MessageBox.Show($"{selectedPet.Name} is sold out. You may have added the last one to your cart.", "Out of Stock");
@@ -55,6 +58,11 @@ namespace PetShop
         {
             TextBox tb = sender as TextBox;
             tb.BorderBrush = Brushes.DarkGray;
+        }
+
+        private void ExitCommand(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

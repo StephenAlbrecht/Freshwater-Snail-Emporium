@@ -18,8 +18,10 @@ namespace PetShop
         public double Price { get; set; }
         [XmlAttribute(DataType = "string")]
         public string ImagePath { get; set; }
-
+        [XmlIgnore]
         public int purchasedAmt { get; set; }
+        [XmlIgnore]
+        public string total { get; set; }
 
         public Pet() {}
 

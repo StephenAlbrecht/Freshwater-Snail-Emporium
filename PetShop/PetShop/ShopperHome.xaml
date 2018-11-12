@@ -11,10 +11,10 @@
             <MenuItem Header="File">
                 <MenuItem Header="Save"/>
                 <MenuItem Header="Save As..."/>
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="ExitCommand"/>
             </MenuItem>
             <MenuItem Header="Logged in as: " x:Name="ShopperLabel"/>
-            <MenuItem Header="{Binding TotalCostDisplay}" x:Name="CartLabel"/>
+            <MenuItem Header="{Binding TotalCostDisplay}" x:Name="CartLabel" Command="{Binding ReviewOrderCommand}"/>
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -37,8 +37,8 @@
                 <Label Content="Quantity:" Height="25"/>
                 <TextBox x:Name="Quantity" Text="{Binding Quantity}" Height="22" Width ="25" Margin="5" TextChanged="TextBoxChanged"/>
                 <Button Margin="10" Height="22" Width="100" Content="Add to Cart" Command="{Binding AddToCartCommand}" Click="ValidateQty"/>
-                <Button Margin="10" Height="22" Width="100" Content="Review Order" Click="ReviewOrderCommand"/>
-                <Button Margin="10" Height="22" Width="100" Content="Place Order" Click="PlaceOrderCommand"/>
+                <Button Margin="10" Height="22" Width="100" Content="Review Order" Command="{Binding ReviewOrderCommand}"/>
+                <Button Margin="10" Height="22" Width="100" Content="Place Order" Command="{Binding PlaceOrderCommand}"/>
             </StackPanel>
         </Grid>
     </DockPanel>

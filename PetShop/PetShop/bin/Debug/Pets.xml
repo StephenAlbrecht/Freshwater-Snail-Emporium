@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ArrayOfPet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pet Name="Asian Spiny Zebra Nerite" Stock="13" Price="2.99" ImagePath="\Images\AsianSpinyZebraNerite.jpg" />
+  <Pet Name="Bajingo Nerite" Stock="4" Price="9.99" ImagePath="\Images\BajingoNerite.jpg" />
+  <Pet Name="Green Tiger Nerite" Stock="18" Price="4.99" ImagePath="\Images\GreenTigerNerite.jpg" />
+  <Pet Name="Olive Nerite" Stock="30" Price="1.29" ImagePath="\Images\OliveNerite.jpg" />
+  <Pet Name="Red Lips Nerite" Stock="22" Price="4.99" ImagePath="\Images\RedLipsNerite.jpg" />
+  <Pet Name="Red Racer Nerite" Stock="7" Price="11.99" ImagePath="\Images\RedRacerNerite.jpg" />
+  <Pet Name="Red Tiger Lady Nerite" Stock="16" Price="4.99" ImagePath="\Images\RedTigerLadyNerite.jpg" />
+  <Pet Name="Spiny Sun Nerite" Stock="15" Price="3.99" ImagePath="\Images\SpinySunNerite.jpg" />
+</ArrayOfPet>
